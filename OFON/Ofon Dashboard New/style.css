@@ -1,0 +1,4343 @@
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Semua section akan tersusun ke bawah */
+.page {
+    position: relative;
+
+    width: 1536px;
+    min-height: 1024px;
+    height: auto;
+
+    margin: 0 auto;
+
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            151deg,
+            #fff6ef 0%,
+            #fdf3ec 42%,
+            #ffffff 100%
+        );
+
+    color: #141414;
+    transform: none;
+}
+
+/* =====================================================
+   SECTION 1 / HERO
+   FIGMA 1536 × 1024
+===================================================== */
+
+.section {
+    position: relative;
+
+    width: 100%;
+    max-width: 1536px;
+    height: 1024px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+
+/* =====================================================
+   BACKGROUND BLOBS
+===================================================== */
+
+.blob {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.blob-orange {
+    width: 520px;
+    height: 520px;
+
+    right: -140px;
+    top: 60px;
+
+    background: #f4700f;
+
+    opacity: 0.75;
+}
+
+
+.blob-right {
+    width: 600px;
+    height: 600px;
+
+    right: -40px;
+    top: 180px;
+
+    background: #fdece0;
+}
+
+
+.blob-yellow {
+    width: 620px;
+    height: 620px;
+
+    left: -180px;
+    top: 150px;
+
+    background: #fbb040;
+
+    opacity: 0.85;
+}
+
+
+.blob-left {
+    width: 520px;
+    height: 520px;
+
+    left: -60px;
+    top: 210px;
+
+    background: #fde9d6;
+
+    opacity: 0.9;
+}
+
+
+.blob-left-soft {
+    width: 420px;
+    height: 420px;
+
+    left: 60px;
+    top: 120px;
+
+    background: #fbe0cb;
+
+    opacity: 0.55;
+}
+
+
+
+/* =====================================================
+   NETWORK
+===================================================== */
+
+.network {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: fixed;
+
+    z-index: 9999;
+
+    width: 1300px;
+    height: 90px;
+
+    left: 50%;
+    top: 26px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 2px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+
+/* LOGO */
+
+.logo {
+    width: 70px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.logo img {
+    width: 95px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 48px;
+
+    margin-left: 35px;
+}
+
+
+.nav-dropdown {
+    position: relative;
+}
+
+
+.nav-dropdown button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #181818;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+
+
+/* ARROW */
+
+.arrow {
+
+    width: 10px;
+    height: 10px;
+
+    border-right: 1.7px solid #181818;
+    border-bottom: 1.7px solid #181818;
+
+    transform:
+        rotate(45deg)
+        translateY(-2px);
+
+    transition: 0.2s;
+}
+
+
+.nav-dropdown.active .arrow {
+
+    transform:
+        rotate(225deg)
+        translate(-2px, -2px);
+}
+
+
+
+/* DROPDOWN */
+
+.dropdown-menu {
+
+    position: absolute;
+
+    top: 34px;
+    left: -18px;
+
+    min-width: 200px;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #eee5dd;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-6px);
+
+    transition: 0.18s;
+}
+
+
+.nav-dropdown.active .dropdown-menu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.dropdown-menu a {
+
+    display: block;
+
+    padding: 10px 12px;
+
+    text-decoration: none;
+
+    color: #181818;
+
+    font-size: 14px;
+
+    border-radius: 9px;
+}
+
+
+.dropdown-menu a:hover {
+
+    background: #fff2e8;
+
+    color: #f4700f;
+}
+
+
+
+/* HEADER RIGHT */
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 36px;
+
+    gap: 14px;
+}
+
+
+.language {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: none;
+
+    background: none;
+
+    color: #333;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+.language img {
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+.separator {
+
+    color: #dddddd;
+
+    font-size: 16px;
+}
+
+
+
+/* CONTACT */
+
+.contact-button {
+
+    width: 211px;
+
+    height: 38px;
+
+    margin-left: 2px;
+
+    padding: 10px 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f4700f;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.contact-button:hover {
+
+    background: #e96208;
+
+    transform: translateY(-1px);
+}
+
+
+.contact-button svg {
+
+    width: 22px;
+
+    height: 22px;
+
+    margin-left: auto;
+}
+
+
+
+/* =====================================================
+   PEOPLE
+===================================================== */
+
+.woman {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 385px;
+    height: 730px;
+
+    left: 0;
+    bottom: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    pointer-events: none;
+}
+
+.man {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 433px;
+    height: 750px;
+
+    right: 0;
+    bottom: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: absolute;
+
+    z-index: 5;
+
+    width: 640px;
+
+    left: calc(50% - 320px);
+
+    top: 236px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+
+/* EYEBROW */
+
+.eyebrow {
+
+    width: 292px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fdeadb;
+
+    border-radius: 999px;
+
+    color: #f4700f;
+
+    font-size: 17px;
+
+    line-height: 21px;
+
+    font-weight: 400;
+}
+
+
+
+/* TITLE */
+
+.hero h1 {
+
+    width: 640px;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 70px;
+
+    line-height: 76px;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 400;
+
+    color: #141414;
+}
+
+
+.hero h1 span {
+
+    color: #f15a24;
+}
+
+
+
+/* DESCRIPTION */
+
+.description {
+
+    width: 596px;
+
+    margin: 0;
+
+    padding-top: 3px;
+
+    text-align: center;
+
+    color: #4a4a4a;
+
+    font-size: 19px;
+
+    line-height: 29px;
+
+    font-weight: 400;
+}
+
+
+
+/* BUTTON AREA */
+
+.hero-buttons {
+
+    width: 640px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 26px;
+
+    padding-top: 14px;
+}
+
+
+
+/* PRIMARY */
+
+.btn-primary {
+
+    width: 268px;
+
+    height: 70px;
+
+    padding: 19px 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #f4700f;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-primary:hover {
+
+    background: #e96208;
+
+    transform: translateY(-2px);
+}
+
+
+.btn-primary svg {
+
+    width: 22px;
+
+    height: 22px;
+
+    margin-left: auto;
+}
+
+
+
+/* SECONDARY */
+
+.btn-secondary {
+
+    width: 222px;
+
+    height: 70px;
+
+    padding: 19px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    background: white;
+
+    color: #141414;
+
+    border: 1px solid #e8e2dc;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-secondary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.06);
+}
+
+
+.play-button {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: auto;
+
+    border-radius: 50%;
+
+    background: #f4700f;
+}
+
+
+.play-button svg {
+
+    width: 18px;
+
+    height: 18px;
+}
+
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits {
+
+    width: 640px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 34px;
+
+    padding-top: 18px;
+}
+
+
+.benefit {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #3d3d3d;
+
+    font-size: 17px;
+
+    line-height: 21px;
+
+    white-space: nowrap;
+}
+
+
+.benefit svg {
+
+    width: 24px;
+
+    height: 24px;
+
+    color: #f1650c;
+
+    flex-shrink: 0;
+}
+
+
+
+/* =====================================================
+   FLOATING ICONS
+===================================================== */
+
+.floating-video,
+.floating-phone,
+.floating-globe {
+
+    position: absolute;
+
+    z-index: 6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f4700f;
+
+    box-shadow:
+        0 6px 20px rgba(244,112,15,.28);
+
+    color: white;
+}
+
+
+.floating-video {
+
+    left: 243px;
+    top: 245px;
+
+    width: 104px;
+    height: 104px;
+
+    border-radius: 52px;
+
+    gap: 6px;
+}
+
+
+.floating-video svg {
+
+    width: 34px;
+    height: 34px;
+}
+
+
+.floating-video svg + svg {
+
+    width: 30px;
+    height: 30px;
+}
+
+
+.floating-phone {
+
+    left: 1134px;
+    top: 208px;
+
+    width: 74px;
+    height: 74px;
+
+    border-radius: 50%;
+}
+
+
+.floating-phone svg {
+
+    width: 36px;
+    height: 36px;
+}
+
+
+.floating-globe {
+
+    left: 1077px;
+    top: 715px;
+
+    width: 78px;
+    height: 78px;
+
+    border-radius: 50%;
+}
+
+
+.floating-globe svg {
+
+    width: 38px;
+    height: 38px;
+}
+
+
+
+/* =====================================================
+   COMPANY SECTION
+===================================================== */
+
+.company-section {
+    position: absolute;
+    z-index: 7;
+
+    left: calc(50% - 435px);
+    top: 832px;
+
+    width: 870px;
+    height: 148px;
+
+    padding: 26px 30px 30px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.company-section h2 {
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 400;
+
+    color: #1c1c1c;
+}
+
+
+.company-logos {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 38px;
+
+    flex-wrap: nowrap;
+}
+
+
+.company-logos img {
+    width: auto;
+    height: 38px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   HELP BOX
+===================================================== */
+
+/* =====================================================
+HELP BOX - FIXED TO SCREEN
+===================================================== */
+
+.help-box {
+    position: fixed !important;
+
+    z-index: 99999;
+
+    right: 32px;
+    bottom: 100px;
+
+    width: 150px;
+    height: 60px;
+
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+
+.help-logo {
+    width: 30px;
+
+    color: #fd6305;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    letter-spacing: -4px;
+}
+
+
+.help-box span {
+    color: #1c1c1c;
+
+    font-size: 17px;
+    line-height: 21px;
+}
+
+
+
+/* CHAT */
+
+/* =====================================================
+CHAT BUTTON - FIXED TO SCREEN
+===================================================== */
+
+.chat-button {
+    position: fixed !important;
+
+    z-index: 99999;
+
+    right: 76px;
+    bottom: 30px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #f4700f;
+
+    border: none;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 24px rgba(244, 112, 15, .35);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.chat-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.chat-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position: absolute;
+
+    z-index: 30;
+
+    left: 50%;
+
+    bottom: 34px;
+
+    transform:
+        translateX(-50%)
+        translateY(12px);
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: #1c1c1c;
+
+    color: white;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .2s;
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+
+/* =====================================================
+   SECTION 2 - TELEKOMUNIKASI
+===================================================== */
+
+.telecom-section {
+    position: relative;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 1024px;
+
+    overflow: hidden;
+
+    background: #fdfaf8;
+
+    color: #20232b;
+
+    box-sizing: border-box;
+}
+
+
+
+/* =====================================================
+   BACKGROUND BLOBS
+===================================================== */
+
+.telecom-blob {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.telecom-blob-top {
+
+    width: 430px;
+    height: 430px;
+
+    right: -170px;
+    top: -230px;
+
+    background: #fbe4d2;
+}
+
+
+.telecom-blob-top::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: 110px;
+    top: 90px;
+
+    border-radius: 50%;
+
+    background: #f9d7bd;
+}
+
+
+.telecom-blob-bottom {
+
+    width: 430px;
+    height: 430px;
+
+    left: -230px;
+    bottom: -270px;
+
+    background: #fce0c9;
+}
+
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.telecom-content {
+
+    position: absolute;
+
+    left: 124px;
+    top: 62px;
+
+    width: 665px;
+}
+
+
+.telecom-content h2 {
+
+    margin: 0;
+
+    width: 600px;
+
+    font-size: 55px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.6px;
+
+    font-weight: 700;
+
+    color: #20232b;
+}
+
+
+.telecom-content h2 span {
+
+    display: block;
+
+    color: #ed4e1d;
+}
+
+
+.telecom-description {
+
+    width: 600px;
+
+    margin-top: 42px;
+
+    margin-bottom: 0;
+
+    font-size: 17px;
+
+    line-height: 29px;
+
+    letter-spacing: 0;
+
+    font-weight: 400;
+
+    color: #59606d;
+}
+
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.telecom-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 31px;
+
+    margin-top: 40px;
+}
+
+
+.telecom-primary {
+
+    width: 377px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ff6909;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.telecom-primary:hover {
+
+    background: #ec5c00;
+
+    transform: translateY(-2px);
+}
+
+
+.maintenance-icon {
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+
+.telecom-secondary {
+
+    width: 253px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 34px;
+
+    background: transparent;
+
+    border: 1.5px solid #ff5b27;
+
+    border-radius: 8px;
+
+    color: #f05327;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.telecom-secondary:hover {
+
+    background: #fff2eb;
+
+    transform: translateY(-2px);
+}
+
+
+.button-arrow {
+
+    font-size: 24px;
+
+    line-height: 0;
+}
+
+
+
+/* =====================================================
+   RIGHT VISUAL
+===================================================== */
+
+.telecom-visual {
+
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    right: -50px;
+    top: 60px;
+}
+
+
+
+/* dashed circle */
+
+.telecom-dashed-circle {
+
+    position: absolute;
+
+    width: 405px;
+    height: 405px;
+
+    left: 82px;
+    top: 100px;
+
+    border: 3px dashed #1699dc;
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+
+    z-index: 1;
+}
+
+
+
+/* orange little connector */
+
+.telecom-circle {
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    left: 80px;
+    top: 252px;
+
+    border-radius: 50%;
+
+    background: #ed8060;
+
+    z-index: 5;
+}
+
+
+
+/* WOMAN */
+
+.telecom-woman {
+
+    position: absolute;
+
+    z-index: 4;
+
+    left: -100px;
+    top: -50px;
+
+    width: 500px;
+    height: 500px;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.telecom-cards {
+    position: absolute;
+
+    left: 50px;
+    right: 50px;
+
+    bottom: 100px;
+
+    width: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 21px;
+
+    box-sizing: border-box;
+}
+
+
+
+/* CARD */
+
+.telecom-card {
+    width: 100%;
+    height: 298px;
+
+    padding: 31px 20px;
+
+    background: #ffffff;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 5px 20px rgba(35, 35, 35, 0.045);
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    transition: .2s;
+}
+
+.telecom-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(35, 35, 35, 0.08);
+}
+
+
+
+/* CARD TOP */
+
+.card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.card-icon {
+
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0e8;
+
+    color: #ff5b27;
+
+    font-size: 26px;
+}
+
+
+.card-top h3 {
+
+    margin: 0;
+
+    color: #252832;
+
+    font-size: 17px;
+
+    line-height: 28px;
+
+    font-weight: 700;
+}
+
+
+
+/* LINE */
+
+.card-line {
+
+    width: 23px;
+    height: 3px;
+
+    margin-top: 21px;
+
+    margin-bottom: 20px;
+
+    background: #f65326;
+}
+
+
+
+/* DESCRIPTION */
+
+.telecom-card p {
+    width: 100%;
+    max-width: 250px;
+
+    margin: 0;
+
+    color: #68707c;
+
+    font-size: 14px;
+
+    line-height: 24px;
+
+    font-weight: 400;
+}
+
+
+
+/* LINK */
+
+.telecom-card a {
+
+    margin-top: auto;
+
+    color: #f65326;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+.telecom-card a span {
+
+    margin-left: 8px;
+
+    font-size: 20px;
+
+    vertical-align: -1px;
+}
+
+/* =====================================================
+   SECTION 3 - TELEPHONY
+===================================================== */
+
+.telephony-section {
+    position: relative;
+
+    width: 1536px;
+    height: 1024px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #181818;
+
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   TELEPHONY SECTION
+   FIGMA SIZE: 1536 × 1024
+===================================================== */
+
+.telephony-section {
+    position: relative;
+
+    width: 100%;
+    max-width: 1536px;
+
+    height: 1024px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #181818;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MAIN BACKGROUND
+===================================================== */
+
+.telephony-bg {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            109.68deg,
+            #fdf9f5 0%,
+            #fdf6f0 55%,
+            #fbf0e6 100%
+        );
+
+    border-radius: 26px;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   TOP RIGHT BACKGROUND
+===================================================== */
+
+.telephony-bg-top {
+    position: absolute;
+
+    width: 520px;
+    height: 430px;
+
+    right: -60px;
+    top: -120px;
+
+    background: #fbe6d2;
+
+    opacity: 0.55;
+
+    border-radius:
+        285px 319px
+        237.5px 130px;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   BOTTOM RIGHT BACKGROUND
+===================================================== */
+
+.telephony-bg-bottom {
+    position: absolute;
+
+    width: 560px;
+    height: 380px;
+
+    right: -40px;
+    bottom: -120px;
+
+    background: #fbe6d2;
+
+    opacity: 0.55;
+
+    border-radius: 235px;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   ORANGE BACKGROUND CIRCLES
+===================================================== */
+
+.telephony-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(241, 117, 28, 0.7);
+
+    opacity: 0.55;
+
+    z-index: 1;
+}
+
+
+/* CIRCLE 1 */
+
+.circle-1 {
+    width: 375px;
+    height: 356px;
+
+    left: 889px;
+    top: 284px;
+}
+
+
+/* CIRCLE 2 */
+
+.circle-2 {
+    width: 362px;
+    height: 319px;
+
+    left: 1044px;
+    top: 459px;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.telephony-content {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 730px;
+
+    left: 4.56%;
+    top: 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.telephony-badge {
+    width: 262px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 6px 26px 6px 6px;
+
+    gap: 14px;
+
+    background: #fdece0;
+
+    border-radius: 40px;
+
+    flex-shrink: 0;
+}
+
+
+/* BADGE ICON */
+
+.telephony-badge-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #f4531d;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+
+.telephony-badge-icon span {
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    transform: rotate(-20deg);
+}
+
+
+/* BADGE TEXT */
+
+.telephony-badge > span {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 19px;
+
+    line-height: 28px;
+
+    font-weight: 600;
+
+    color: #f4531d;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.telephony-heading {
+    width: 660px;
+
+    margin: 43px 0 0 0;
+
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 57px;
+
+    line-height: 1.25;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 700;
+
+    color: #181818;
+}
+
+
+/* ORANGE TEXT */
+
+.telephony-heading span {
+    color: #f4531d;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.telephony-description {
+    width: 543px;
+
+    margin: 36px 0 0 0;
+
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 34px;
+
+    font-weight: 400;
+
+    color: #3a3a3a;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.telephony-features {
+    width: 690px;
+
+    height: 175px;
+
+    margin-top: 36px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FEATURE ITEM
+===================================================== */
+
+.telephony-feature {
+    width: 209px;
+
+    height: 151px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 0 26px 0 0;
+
+    gap: 7px;
+
+    box-sizing: border-box;
+}
+
+
+/* SECOND + THIRD */
+
+.telephony-feature.feature-border {
+    width: 240px;
+
+    padding:
+        0
+        26px
+        0
+        30px;
+
+    border-left: 1px solid #e9dfd7;
+}
+
+
+/* =====================================================
+   FEATURE TITLE
+===================================================== */
+
+.feature-title {
+    width: 183px;
+    height: 42px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   FEATURE ICON
+===================================================== */
+
+.feature-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #f4531d;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   FEATURE TITLE TEXT
+===================================================== */
+
+.feature-title h3 {
+    margin: 0;
+
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 19px;
+
+    line-height: 28px;
+
+    font-weight: 600;
+
+    color: #181818;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   FEATURE DESCRIPTION
+===================================================== */
+
+.telephony-feature p {
+    width: 127px;
+
+    margin: 0 0 0 56px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14.5px;
+
+    line-height: 25px;
+
+    font-weight: 400;
+
+    color: #4a4a4a;
+}
+
+
+/* =====================================================
+   LEARN MORE BUTTON
+===================================================== */
+
+.telephony-link {
+    width: 299px;
+    height: 67px;
+
+    margin-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 19px 30px;
+
+    gap: 22px;
+
+    background: #fd6305;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* HOVER */
+
+.telephony-link:hover {
+    background: #f4531d;
+
+    transform: translateY(-2px);
+}
+
+
+/* BUTTON TEXT */
+
+.telephony-link span:first-child {
+    width: 193px;
+
+    height: 29px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 19px;
+
+    line-height: 28px;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* BUTTON ARROW */
+
+.telephony-arrow {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    line-height: 24px;
+}
+
+
+/* =====================================================
+   RIGHT VISUAL
+===================================================== */
+
+.telephony-visual {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 875px;
+    height: 584px;
+
+    left: 39.52%;
+    top: 265px;
+}
+
+
+/* =====================================================
+   TELEPHONE IMAGE
+===================================================== */
+
+.telephony-phone {
+    position: absolute;
+
+    width: 875px;
+    height: 584px;
+
+    left: 0;
+    top: 0;
+
+    object-fit: contain;
+
+    display: block;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .telephony-section {
+        height: 1024px;
+    }
+
+    .telephony-content {
+        left: 50px;
+        transform: scale(0.82);
+        transform-origin: top left;
+    }
+
+    .telephony-visual {
+        left: 43%;
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .telephony-section {
+        height: auto;
+
+        min-height: 1024px;
+    }
+
+    .telephony-content {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        padding: 70px 40px 0;
+
+        width: 100%;
+
+        transform: none;
+    }
+
+    .telephony-heading {
+        width: 100%;
+
+        font-size: 48px;
+    }
+
+    .telephony-description {
+        width: 100%;
+    }
+
+    .telephony-features {
+        width: 100%;
+    }
+
+    .telephony-visual {
+        position: absolute;
+
+        width: 650px;
+        height: 43aa4px;
+
+        left: 48%;
+        top: 570px;
+
+        transform: translateX(-20%);
+    }
+
+    .telephony-phone {
+        width: 650px;
+        height: 434px;
+    }
+}
+/* =====================================================
+   SECTION 4 - MIGRASI CLOUD PBX
+   ===================================================== */
+
+.cloud-pbx-section {
+    position: relative;
+    width: 100%;
+    min-height: 1024px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        126.69deg,
+        #FDF0E0 0%,
+        #FDF4E9 45%,
+        #FEFAF5 100%
+    );
+
+    border-radius: 24px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ORANGE BACKGROUND
+   ===================================================== */
+
+.cloud-pbx-orange-bg {
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -20px;
+    top: 250px;
+
+    background: #FBB03B;
+
+    border-radius: 280px;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   DASHBOARD
+   ===================================================== */
+
+.cloud-pbx-dashboard {
+    position: absolute;
+
+    width: 520px;
+    height: 472px;
+
+    left: 55%;
+    top: 250px;
+
+    z-index: 2;
+
+    transform: rotate(2deg);
+}
+
+.cloud-pbx-dashboard img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   CLOUD
+   ===================================================== */
+
+.cloud-pbx-cloud {
+    position: absolute;
+
+    width: 4080x;
+    height: auto;
+
+    right: 50%;
+    top: 80px;
+
+    z-index: 2;
+}
+
+.cloud-pbx-cloud img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   WOMAN
+   ===================================================== */
+
+.cloud-pbx-woman {
+    position: absolute;
+
+    width: 1060px;
+    height: 706px;
+
+    left: 44%;
+
+    top: 398px;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.cloud-pbx-woman img {
+    width: 75%;
+    height: 80%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =====================================================
+   PHONE CIRCLE
+   ===================================================== */
+
+.cloud-pbx-phone {
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: 8px;
+    top: 150px;
+
+    background: #F1751C;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5;
+}
+
+.cloud-pbx-phone span {
+    color: #FFFFFF;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+   ===================================================== */
+
+.cloud-pbx-content {
+    position: absolute;
+
+    width: 640px;
+
+    left: 84px;
+    top: 37px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    z-index: 10;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   LABEL
+   ===================================================== */
+
+.cloud-pbx-label {
+    width: 355px;
+    height: 68px;
+
+    padding: 8px 26px 8px 8px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 14px;
+
+    background: #FDE3C9;
+
+    border-radius: 40px;
+}
+
+.cloud-pbx-label-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #F1751C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+
+    font-size: 26px;
+}
+
+.cloud-pbx-label span {
+    font-size: 19px;
+    line-height: 28px;
+    font-weight: 600;
+
+    color: #F1751C;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.cloud-pbx-heading {
+    width: 640px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 14px;
+
+    box-sizing: border-box;
+}
+
+.cloud-pbx-heading h2 {
+    width: 640px;
+
+    margin: 0;
+
+    font-size: 88px;
+    line-height: 95px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #222222;
+}
+
+.cloud-pbx-heading h2 span {
+    color: #F25701;
+}
+
+
+/* Orange line */
+
+.cloud-pbx-line {
+    width: 74px;
+    height: 6px;
+
+    margin-top: 28px;
+
+    background: #F1751C;
+
+    border-radius: 3px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.cloud-pbx-description {
+    width: 640px;
+
+    margin: 0;
+
+    padding: 2.96px 0 0.6px;
+
+    box-sizing: border-box;
+
+    font-size: 21px;
+    line-height: 35px;
+
+    font-weight: 400;
+
+    color: #4A4A4A;
+}
+
+
+/* =====================================================
+   FEATURES
+   ===================================================== */
+
+.cloud-pbx-features {
+    width: 640px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    padding: 30px 0 26px;
+
+    box-sizing: border-box;
+}
+
+
+/* Individual feature */
+
+.cloud-pbx-feature {
+    width: 172px;
+    min-height: 249px;
+
+    padding: 0 22px 0 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+
+/* Feature with vertical border */
+
+.cloud-pbx-feature.bordered {
+    width: 204px;
+
+    padding: 0 22px 0 32px;
+
+    border-left: 1px dashed #E8B98F;
+}
+
+
+/* =====================================================
+   FEATURE ICON
+   ===================================================== */
+
+.cloud-pbx-feature-icon {
+    width: 66px;
+    height: 66px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #FCE0C6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #F1751C;
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   FEATURE TITLE
+   ===================================================== */
+
+.cloud-pbx-feature h3 {
+    width: 150px;
+
+    margin: 0;
+
+    padding-top: 10px;
+
+    font-size: 19px;
+    line-height: 26px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+.cloud-pbx-feature.bordered h3 {
+    width: 149px;
+}
+
+
+/* =====================================================
+   FEATURE DESCRIPTION
+   ===================================================== */
+
+.cloud-pbx-feature p {
+    width: 150px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 24px;
+
+    font-weight: 400;
+
+    color: #555555;
+}
+
+.cloud-pbx-feature.bordered p {
+    width: 149px;
+}
+
+
+/* =====================================================
+   BUTTON
+   ===================================================== */
+
+.cloud-pbx-button {
+    width: 321px;
+    height: 74px;
+
+    padding: 21px 30px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 22px;
+
+    background: #FD6305;
+
+    border-radius: 12px;
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.cloud-pbx-button span:first-child {
+    font-size: 21px;
+    line-height: 32px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.cloud-pbx-arrow {
+    font-size: 27px;
+    line-height: 1;
+
+    color: #FFFFFF;
+}
+
+.cloud-pbx-button:hover {
+    transform: translateY(-2px);
+
+    background: #F25701;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1200px) {
+
+    .cloud-pbx-content {
+        left: 50px;
+    }
+
+    .cloud-pbx-heading h2 {
+        font-size: 72px;
+        line-height: 78px;
+    }
+
+    .cloud-pbx-woman {
+        left: 35%;
+        transform: scale(0.85);
+        transform-origin: top left;
+    }
+
+    .cloud-pbx-dashboard {
+        left: 52%;
+        transform: rotate(-4deg) scale(0.85);
+        transform-origin: top left;
+    }
+
+    .cloud-pbx-cloud {
+        left: 57%;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .cloud-pbx-section {
+        min-height: 1100px;
+    }
+
+    .cloud-pbx-content {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+
+        padding: 50px;
+
+        box-sizing: border-box;
+    }
+
+    .cloud-pbx-heading,
+    .cloud-pbx-heading h2,
+    .cloud-pbx-description,
+    .cloud-pbx-features {
+        width: 100%;
+    }
+
+    .cloud-pbx-heading h2 {
+        font-size: 64px;
+        line-height: 70px;
+    }
+
+    .cloud-pbx-woman {
+        left: 30%;
+        top: 650px;
+
+        transform: scale(0.7);
+        transform-origin: top left;
+    }
+
+    .cloud-pbx-dashboard {
+        left: 45%;
+        top: 570px;
+
+        transform: rotate(-4deg) scale(0.65);
+        transform-origin: top left;
+    }
+
+    .cloud-pbx-orange-bg {
+        top: 680px;
+    }
+
+    .cloud-pbx-phone {
+        top: 650px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cloud-pbx-section {
+        min-height: 1250px;
+
+        border-radius: 16px;
+    }
+
+    .cloud-pbx-content {
+        padding: 30px 24px;
+    }
+
+    .cloud-pbx-label {
+        width: 100%;
+        max-width: 355px;
+    }
+
+    .cloud-pbx-heading h2 {
+        font-size: 48px;
+        line-height: 54px;
+    }
+
+    .cloud-pbx-description {
+        font-size: 17px;
+        line-height: 29px;
+    }
+
+    .cloud-pbx-features {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .cloud-pbx-feature,
+    .cloud-pbx-feature.bordered {
+        width: 100%;
+
+        padding: 0;
+
+        border-left: none;
+        border-top: 1px dashed #E8B98F;
+
+        padding-top: 20px;
+    }
+
+    .cloud-pbx-woman {
+        left: 5%;
+        top: 700px;
+
+        transform: scale(0.48);
+    }
+
+    .cloud-pbx-dashboard {
+        left: 15%;
+        top: 730px;
+
+        transform: rotate(-4deg) scale(0.45);
+    }
+
+    .cloud-pbx-cloud {
+        left: 50%;
+        top: 680px;
+
+        transform: scale(0.7);
+    }
+
+    .cloud-pbx-orange-bg {
+        width: 500px;
+        height: 500px;
+
+        top: 760px;
+        right: -180px;
+    }
+
+    .cloud-pbx-phone {
+        width: 70px;
+        height: 70px;
+
+        top: 750px;
+        right: 20px;
+    }
+}
+/* =========================================================
+   SECTION 5 - INTEGRASI SISTEM TELEPON
+   ========================================================= */
+
+.integrasi-telepon-section {
+    position: relative;
+    width: 100%;
+    min-height: 1024px;
+    background: #ffffff;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ================= BACKGROUND ================= */
+
+.integrasi-bg {
+    position: absolute;
+    width: 1100px;
+    height: 700px;
+    right: 12px;
+    bottom: 45px;
+
+    background:
+        radial-gradient(
+            120% 80% at 80% 90%,
+            #FDF0E6 0%,
+            #FFF8F2 45%,
+            #FFFFFF 70%
+        );
+}
+
+
+/* ================= BULATAN KANAN ================= */
+
+.integrasi-orange-circle {
+    position: absolute;
+
+    width: 442px;
+    height: 444px;
+
+    left: 959px;
+    top: 143px;
+
+    background: #F58220;
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* Lingkaran cream di belakang */
+
+.integrasi-telepon-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    left: 830px;
+    top: 170px;
+
+    background: #FDF0E4;
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+
+/* Titik orange */
+
+.integrasi-small-dot {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    left: 940px;
+    top: 114px;
+
+    background: #F26522;
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+
+/* ================= CONTENT KIRI ================= */
+
+.integrasi-content {
+    position: absolute;
+
+    width: 640px;
+
+    left: 78px;
+    top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    z-index: 10;
+}
+
+
+/* ================= LABEL ================= */
+
+.integrasi-label {
+    width: 393px;
+    height: 50px;
+
+    padding: 8px 22px 8px 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background: #FDECE1;
+    border-radius: 999px;
+
+    box-sizing: border-box;
+}
+
+
+.integrasi-label-icon {
+    width: 34px;
+    height: 34px;
+
+    background: #F26522;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+.integrasi-label > span {
+    color: #F26522;
+
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+
+/* ================= TITLE ================= */
+
+.integrasi-title {
+    margin-top: 38px;
+
+    font-size: 74px;
+    line-height: 78px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+
+.integrasi-title div:first-child {
+    color: #12233F;
+}
+
+
+.integrasi-title div:last-child {
+    color: #F26522;
+}
+
+
+/* ================= GARIS ================= */
+
+.integrasi-line {
+    width: 88px;
+    height: 7px;
+
+    margin-top: 30px;
+
+    background: #F26522;
+    border-radius: 4px;
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.integrasi-description {
+    width: 499px;
+
+    margin-top: 28px;
+    margin-bottom: 30px;
+
+    color: #3D4A5C;
+
+    font-size: 19px;
+    line-height: 29px;
+
+    font-weight: 400;
+}
+
+
+/* ================= FEATURE ================= */
+
+.integrasi-feature {
+    width: 640px;
+    min-height: 88px;
+
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+}
+
+
+/* Icon */
+
+.integrasi-feature-icon {
+    flex: 0 0 72px;
+
+    width: 72px;
+    height: 72px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #F26522;
+
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+/* Garis vertikal */
+
+.integrasi-feature-line {
+    width: 3px;
+    height: 80px;
+
+    margin-left: 22px;
+    margin-right: 22px;
+
+    background: #F3D6C3;
+
+    border-radius: 2px;
+}
+
+
+/* Text feature */
+
+.integrasi-feature-content {
+    padding-top: 1px;
+}
+
+
+.integrasi-feature-content h3 {
+    margin: 0 0 5px 0;
+
+    color: #12233F;
+
+    font-size: 20px;
+    line-height: 30px;
+
+    font-weight: 600;
+}
+
+
+.integrasi-feature-content p {
+    width: 420px;
+
+    margin: 0;
+
+    color: #4A5666;
+
+    font-size: 15.5px;
+    line-height: 25px;
+
+    font-weight: 400;
+}
+
+
+/* ================= BUTTON ================= */
+
+.integrasi-button {
+    width: 308px;
+    height: 71px;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #FD6305;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 21px 30px;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 19px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.integrasi-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.integrasi-arrow {
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   GAMBAR KANAN
+   ========================================================= */
+
+
+/* ================= TEKNISI ================= */
+
+.integrasi-teknisi {
+    position: absolute;
+
+    width: 493px;
+    height: 493px;
+
+    left: 812px;
+    top: 66px;
+
+    object-fit: contain;
+
+    z-index: 4;
+}
+
+
+/* ================= TIM KANTOR ================= */
+
+.integrasi-tim {
+    position: absolute;
+
+    width: 394px;
+    height: 370px;
+
+    left: 1080px;
+    top: 240px;
+
+    object-fit: contain;
+
+    z-index: 6;
+}
+
+
+/* ================= TELEPON ================= */
+
+.integrasi-telepon {
+    position: absolute;
+
+    width: 325px;
+    height: 270px;
+
+    left: 812px;
+    top: 450px;
+
+    object-fit: contain;
+
+    z-index: 7;
+}
+
+
+/* ================= FLOATING PHONE ================= */
+
+.integrasi-floating-phone {
+    position: absolute;
+
+    width: 104px;
+    height: 104px;
+
+    left: 760px;
+    top: 198px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #F26522;
+
+    font-size: 40px;
+
+    z-index: 8;
+}
+
+
+/* ================= FLOATING STATISTIK ================= */
+
+.integrasi-floating-stat {
+    position: absolute;
+
+    width: 96px;
+    height: 96px;
+
+    left: 1319px;
+    top: 175px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #F26522;
+
+    font-size: 38px;
+
+    z-index: 8;
+}
+/* =========================================================
+   SECTION 6 - PRODUK OFON
+========================================================= */
+
+.produk-ofon-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 1024px;
+
+    box-sizing: border-box;
+
+    padding: 55px 40px 40px;
+
+    background: #FDFBFA;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.produk-bg-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* LEFT LARGE */
+
+.circle-left {
+    width: 470px;
+    height: 470px;
+
+    left: -190px;
+    top: -230px;
+
+    background: #FDE5D4;
+
+    opacity: 0.75;
+}
+
+
+/* LEFT SMALL */
+
+.circle-left-small {
+    width: 330px;
+    height: 330px;
+
+    left: -150px;
+    top: -190px;
+
+    background: #FBC99B;
+
+    opacity: 0.8;
+}
+
+
+/* RIGHT */
+
+.circle-right {
+    width: 420px;
+    height: 420px;
+
+    right: -140px;
+    top: 430px;
+
+    background: #FDE0CD;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   ORANGE BALL
+========================================================= */
+
+.produk-orange-ball {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FF9D4D 0%,
+            #FD641A 70%,
+            #F26522 100%
+        );
+}
+
+
+/* BIG BALL */
+
+.ball-large {
+    width: 56px;
+    height: 56px;
+
+    left: 126px;
+    top: 196px;
+}
+
+
+/* SMALL BALL */
+
+.ball-small {
+    width: 22px;
+    height: 22px;
+
+    left: 120px;
+    top: 676px;
+}
+
+
+/* =========================================================
+   DOT PATTERN
+========================================================= */
+
+.produk-dots {
+    position: absolute;
+
+    width: 81px;
+    height: 62px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #F8A06A 2.5px,
+            transparent 2.8px
+        );
+
+    background-size: 19px 19px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* TOP RIGHT */
+
+.dots-top {
+    right: 96px;
+    top: 56px;
+}
+
+
+/* BOTTOM LEFT */
+
+.dots-bottom {
+    left: 180px;
+    top: 764px;
+
+    height: 43px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.produk-header {
+    position: relative;
+
+    width: 100%;
+    max-width: 1536px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 3;
+}
+
+
+.produk-header h2 {
+    margin: 0;
+
+    font-size: 54px;
+    line-height: 81px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    color: #152C4E;
+}
+
+
+.produk-header h2 span {
+    color: #F26522;
+}
+
+
+/* ORANGE LINE */
+
+.produk-title-line {
+    width: 56px;
+    height: 4px;
+
+    margin-top: 25px;
+
+    background: #F26522;
+
+    border-radius: 2px;
+}
+
+
+/* DESCRIPTION */
+
+.produk-header p {
+    width: 720px;
+
+    max-width: 90%;
+
+    margin: 20px 0 0;
+
+    font-size: 16.5px;
+
+    line-height: 33px;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    color: #33475F;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS CONTAINER
+========================================================= */
+
+.produk-cards {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1206px;
+
+    margin: 38px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 46px 22px;
+
+    justify-content: center;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.produk-card {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 262px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding:
+        26px
+        26px
+        22px;
+
+    background: #FFFFFF;
+
+    border:
+        1px solid
+        #FDE3D2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0px
+        8px
+        22px
+        rgba(
+            242,
+            101,
+            34,
+            0.13
+        );
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   ORANGE SHADOW CARD
+========================================================= */
+
+.produk-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+
+    right: -3px;
+
+    top: 15px;
+
+    bottom: -3px;
+
+    background:
+        linear-gradient(
+            125.24deg,
+            #FBB040 0%,
+            #F26522 100%
+        );
+
+    border-radius: 18px;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CARD DOTS
+========================================================= */
+
+.card-decoration {
+    position: absolute;
+
+    width: 32px;
+    height: 22px;
+
+    right: 23px;
+    top: 23px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #F8A06A 1.75px,
+            transparent 2px
+        );
+
+    background-size: 9.5px 9.5px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PRODUCT ICON
+========================================================= */
+
+.produk-icon {
+    position: relative;
+
+    flex:
+        0 0
+        88px;
+
+    width: 88px;
+    height: 88px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #F26522;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0px
+        0px
+        0px
+        12px
+        #FDECE2;
+
+    overflow: hidden;
+}
+
+
+/* IMAGE */
+
+.produk-icon img {
+    width: 46px;
+    height: 46px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   PRODUCT CONTENT
+========================================================= */
+
+.produk-content {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding-top: 1px;
+}
+
+
+/* TITLE */
+
+.produk-content h3 {
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 32px;
+
+    font-weight: 700;
+
+    color: #152C4E;
+}
+
+
+/* SMALL ORANGE LINE */
+
+.card-line {
+    width: 34px;
+    height: 3px;
+
+    margin-top: 10px;
+
+    background: #F26522;
+
+    border-radius: 2px;
+}
+
+
+/* DESCRIPTION */
+
+.produk-content p {
+    margin:
+        11px
+        0
+        0;
+
+    font-size: 13.5px;
+
+    line-height: 26px;
+
+    font-weight: 400;
+
+    color: #4A5B70;
+}
+
+
+/* LINK */
+
+.produk-content a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 13px;
+
+    text-decoration: none;
+
+    font-size: 13.5px;
+
+    line-height: 20px;
+
+    font-weight: 600;
+
+    color: #F26522;
+
+    transition:
+        gap
+        0.2s
+        ease;
+}
+
+
+/* ARROW */
+
+.produk-content a span {
+    font-size: 22px;
+
+    line-height: 18px;
+
+    font-weight: 400;
+}
+
+
+/* HOVER */
+
+.produk-content a:hover {
+    gap: 14px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY BOX
+========================================================= */
+
+.technology-box {
+    position: relative;
+
+    width: calc(100% - 24px);
+
+    max-width: 1412px;
+
+    min-height: 156px;
+
+    margin:
+        30px
+        auto
+        0;
+
+    padding:
+        27px
+        40px
+        30px;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0px
+        6px
+        24px
+        rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TITLE
+========================================================= */
+
+.technology-title {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 23px;
+}
+
+
+.technology-title span {
+    width: 60px;
+    height: 3px;
+
+    flex-shrink: 0;
+
+    background: #F26522;
+
+    border-radius: 2px;
+}
+
+
+.technology-title h3 {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 24px;
+
+    font-weight: 700;
+
+    color: #152C4E;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TECHNOLOGY LOGOS
+========================================================= */
+
+.technology-logos {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+.technology-logo {
+    height: 38px;
+
+    flex: 0 1 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.technology-logo img {
+    display: block;
+
+    width: auto;
+
+    max-width: 130px;
+
+    max-height: 38px;
+
+    object-fit: contain;
+}
+
+
+/* OFON */
+
+.technology-logo.ofon-logo img {
+    width: 95px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .produk-ofon-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+    .produk-cards {
+        max-width: 1000px;
+    }
+
+
+    .produk-card {
+        padding:
+            22px
+            20px;
+    }
+
+
+    .produk-icon {
+        width: 75px;
+        height: 75px;
+
+        flex-basis: 75px;
+
+        box-shadow:
+            0px
+            0px
+            0px
+            10px
+            #FDECE2;
+    }
+
+
+    .produk-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .technology-logos {
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .produk-ofon-section {
+        min-height: auto;
+
+        padding-top: 60px;
+
+        padding-bottom: 50px;
+    }
+
+
+    .produk-header h2 {
+        font-size: 44px;
+
+        line-height: 60px;
+    }
+
+
+    .produk-header p {
+        font-size: 15px;
+
+        line-height: 28px;
+    }
+
+
+    .produk-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 760px;
+    }
+
+
+    .technology-box {
+        max-width: 760px;
+
+        overflow-x: auto;
+    }
+
+
+    .technology-logos {
+        min-width: 900px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .produk-ofon-section {
+        padding:
+            50px
+            20px
+            40px;
+    }
+
+
+    .produk-header h2 {
+        font-size: 36px;
+
+        line-height: 48px;
+    }
+
+
+    .produk-title-line {
+        margin-top: 18px;
+    }
+
+
+    .produk-header p {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 16px;
+
+        font-size: 14px;
+
+        line-height: 25px;
+    }
+
+
+    .produk-cards {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-top: 40px;
+    }
+
+
+    .produk-card {
+        min-height: 250px;
+
+        padding:
+            24px
+            20px;
+
+        gap: 20px;
+    }
+
+
+    .produk-icon {
+        width: 70px;
+        height: 70px;
+
+        flex-basis: 70px;
+
+        box-shadow:
+            0px
+            0px
+            0px
+            9px
+            #FDECE2;
+    }
+
+
+    .produk-icon img {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .produk-content h3 {
+        font-size: 19px;
+
+        line-height: 28px;
+    }
+
+
+    .produk-content p {
+        font-size: 13px;
+
+        line-height: 23px;
+    }
+
+
+    .technology-box {
+        width: 100%;
+
+        margin-top: 35px;
+
+        padding:
+            25px
+            20px;
+
+        overflow-x: auto;
+    }
+
+
+    .technology-title {
+        gap: 10px;
+    }
+
+
+    .technology-title span {
+        width: 35px;
+    }
+
+
+    .technology-title h3 {
+        font-size: 14px;
+    }
+
+
+    .technology-logos {
+        min-width: 900px;
+    }
+
+
+    .circle-left {
+        left: -250px;
+    }
+
+
+    .circle-left-small {
+        left: -250px;
+    }
+
+
+    .circle-right {
+        right: -250px;
+    }
+
+}
